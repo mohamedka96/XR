@@ -1,0 +1,58 @@
+{
+  "nodes": [
+    {
+      "id": "greeting",
+      "prompt": "Good morning, Mr. Ahmed. I’m a pharmacy student from the clinical pharmacy team. I’d like to ask you a few questions about your health. Is that okay with you?",
+      "patient": "Yes, okay.",
+      "next": "reason"
+    },
+    {
+      "id": "reason",
+      "prompt": "Can you tell me what brought you to the hospital today?",
+      "patient": "I was having a heavy pain in my chest… it spread to my arm. I was sweating a lot and felt short of breath.",
+      "next": "comorbid"
+    },
+    {
+      "id": "comorbid",
+      "prompt": "Do you have any ongoing health problems?",
+      "patient": "Yes, I have high blood pressure, sugar, and high cholesterol.",
+      "followups": [
+        { "label": "How long have you had high blood pressure?", "answer": "About 10 years." },
+        { "label": "How long have you had diabetes?", "answer": "Around 5 years." },
+        { "label": "Do you take anything for cholesterol?", "answer": "Yes, every night." },
+        { "label": "Any stomach problems?", "answer": "Yes, I have acid reflux sometimes." }
+      ],
+      "next": "allergy"
+    },
+    {
+      "id": "allergy",
+      "prompt": "Do you have any allergies to food or medicines?",
+      "patient": "No, none.",
+      "next": "social"
+    },
+    {
+      "id": "social",
+      "prompt": "Do you smoke? Any family history of heart problems?",
+      "patient": "I smoke 1 pack a day. My brother died from a heart attack at 60.",
+      "next": "meds"
+    },
+    {
+      "id": "meds",
+      "prompt": "Can you tell me the medicines you take regularly?",
+      "patient": "Atorvastatin, Metformin, Lisinopril… and sometimes Aspirin.",
+      "followups": [
+        { "label": "Atorvastatin", "answer": "40 mg once daily at night, for cholesterol." },
+        { "label": "Metformin", "answer": "1000 mg twice daily, for sugar." },
+        { "label": "Lisinopril", "answer": "10 mg once daily, for blood pressure." },
+        { "label": "Aspirin", "answer": "81 mg, not daily, for heart." }
+      ],
+      "next": "final"
+    },
+    {
+      "id": "final",
+      "prompt": "Do you take anything else, like herbal or over-the-counter medicines?",
+      "patient": "No.",
+      "next": "end"
+    }
+  ]
+}
