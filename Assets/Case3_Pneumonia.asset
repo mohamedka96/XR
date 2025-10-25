@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b3ed8e7e0e5e44697b3e0b2902e917, type: 3}
+  m_Name: Case3_Pneumonia
+  m_EditorClassIdentifier: 
+  patientName: Etimad Mohamed
+  age: 72
+  weight: 75
+  height: 165
+  chiefComplaint: Abdominal pain
+  history: ' Admission diagnosis: Sepsis with hyperbilirubinemia due to acute cholecystitis.
+    Past medical history: Type 2 Diabetes Mellitus (on metformin 500), Hypertension
+    (on bisoprolol 5 mg), History of suspected pancreatitis with ICU admission. No
+    known drug allergies.
+
+'
+  bloodPressure: 110/70
+  heartRate: 97
+  respiratoryRate: 21
+  spo2: 97
+  temperature: 37.5
+  urineOutputPerHour: 300
+  ventilatorRate: 0
+  tidalVolume: 0
+  peep: 0
+  fio2: 0.21
+  infusionDrugName: Meropenem
+  infusionRate: 100
+  infusionVTBI: 100
+  labResults: " Hb: 7.4 g/dL (\u2193) WBC: 1.88 x10^3/\u03BCL (\u2193 leukopenia)
+    Platelets: 148 x10^3/\u03BCL (low-normal) Creatinine: 0.75 mg/dL (normal) INR:
+    2.2 (\u2191) aPTT: 80 sec (\u2191) Na+: 130 mmol/L K+: 2.9 mmol/L (\u2193) CRP:
+    136 mg/L (\u2191) pH: 7.45 Total bilirubin: 8.2 mg/dL (\u2191) Albumin: 2.3 g/dL
+    (\u2193)\r\n"
+  medicationsList: 

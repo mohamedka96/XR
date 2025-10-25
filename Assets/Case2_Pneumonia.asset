@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b3ed8e7e0e5e44697b3e0b2902e917, type: 3}
+  m_Name: Case2_Pneumonia
+  m_EditorClassIdentifier: 
+  patientName: Sabah Sayed
+  age: 82
+  weight: 65
+  height: 160
+  chiefComplaint: Loin pain
+  history: ' Admission diagnosis: Hyperkalemia (K+ 5.4), metabolic acidosis, AKI,
+    dehydration. Past medical history: DM on oral antidiabetic, HTN on concor 5 mg,
+    Hx of ccu admission (HF, 20-30%), Hx of sepsis (cellulitis), Hypothyroidism on
+    levothyroxine 25 mcg.
+
+'
+  bloodPressure: 100/60
+  heartRate: 84
+  respiratoryRate: 20
+  spo2: 98
+  temperature: 37.2
+  urineOutputPerHour: 50
+  ventilatorRate: 0
+  tidalVolume: 0
+  peep: 0
+  fio2: 0.21
+  infusionDrugName: Ringer Lactate
+  infusionRate: 75
+  infusionVTBI: 1000
+  labResults: "Hb: 15.6 g/dL WBC: 5.6 x10^3/\u03BCL Platelets: 176 x10^3/\u03BCL
+    Serum Creatinine: 4.8 mg/dL Urea: 156 mg/dL Na+: 127 mmol/L K+: 5.4 mmol/L (on
+    admission) -> 4.4 mmol/L (after one day) pH: 7.3 CRP: 6 mg/ml Troponin: 2.6 ng/mL\r\n"
+  medicationsList: 
