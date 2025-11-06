@@ -10,13 +10,38 @@ public class ToggleCanvasOnClick : MonoBehaviour
     {
         if (targetCanvas != null)
         {
-            Canvas canvasComponent = targetCanvas.GetComponent<Canvas>();
-            if (canvasComponent != null)
-            {
-                // اعكس حالة تفعيل مكون Canvas
-                canvasComponent.enabled = !canvasComponent.enabled;
-                Debug.Log("Toggled Canvas: " + targetCanvas.name); // لنتأكد أن الدالة استدعيت
-            }
+            // نعكس حالة تفعيل GameObject بالكامل بدلاً من مكون Canvas فقط
+            bool newState = !targetCanvas.activeSelf;
+            targetCanvas.SetActive(newState);
+            Debug.Log("Toggled Canvas: " + targetCanvas.name + " - " + (newState ? "Shown" : "Hidden"));
+        }
+        else
+        {
+            Debug.LogError("Target Canvas is not assigned!");
+        }
+    }
+
+    // دالة لإظهار الشاشة
+    public void ShowCanvas()
+    {
+        if (targetCanvas != null)
+        {
+            targetCanvas.SetActive(true);
+            Debug.Log("Showed Canvas: " + targetCanvas.name);
+        }
+        else
+        {
+            Debug.LogError("Target Canvas is not assigned!");
+        }
+    }
+
+    // دالة لإخفاء الشاشة
+    public void HideCanvas()
+    {
+        if (targetCanvas != null)
+        {
+            targetCanvas.SetActive(false);
+            Debug.Log("Hid Canvas: " + targetCanvas.name);
         }
         else
         {

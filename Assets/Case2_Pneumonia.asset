@@ -26,7 +26,7 @@ MonoBehaviour:
   bloodPressure: 100/60
   heartRate: 84
   respiratoryRate: 20
-  spo2: 98
+  spo2: 96
   temperature: 37.2
   urineOutputPerHour: 50
   ventilatorRate: 0
@@ -38,5 +38,6 @@ MonoBehaviour:
   infusionVTBI: 1000
   labResults: "Hb: 15.6 g/dL WBC: 5.6 x10^3/\u03BCL Platelets: 176 x10^3/\u03BCL
     Serum Creatinine: 4.8 mg/dL Urea: 156 mg/dL Na+: 127 mmol/L K+: 5.4 mmol/L (on
-    admission) -> 4.4 mmol/L (after one day) pH: 7.3 CRP: 6 mg/ml Troponin: 2.6 ng/mL\r\n"
+    admission) -> 4.4 mmol/L (after one day) pH: 7.3 CRP: 6 mg/ml Troponin: 2.6 ng/mL\r\nPotassium
+    (this morning): 4.4 mmol/L\nCRP: 6 mg/L (Normal)\nWBC: 5.6 x10\xB3/\xB5L (Normal)"
   medicationsList: 
