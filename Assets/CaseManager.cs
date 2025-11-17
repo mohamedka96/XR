@@ -12,20 +12,35 @@ public class CaseManager : MonoBehaviour
     public VentilatorUIController ventilatorUI;
     public InfusionPumpUIController infusionPumpUI;
     public HistoryFileUIController historyFileUI;
-    // يمكنك إضافة المزيد من أجهزة التحكم هنا في المستقبل
 
     [Header("UI Canvases")]
-    // مراجع لواجهات الأجهزة نفسها لإظهارها أو إخفائها
+    // مراجع لواجهات الأجهزة نفسها لإخفائها أو إظهارها
     public GameObject vitalSignsCanvas;
     public GameObject ventilatorCanvas;
     public GameObject infusionPumpCanvas;
     public GameObject historyFileCanvas;
 
+    // --- جديد: قسم إعدادات السيناريو ---
+    [Header("Scenario Settings")]
+    [Tooltip("اسحب هنا الكائن الأب الذي يحتوي على شخصيات سيناريو أمراض الكلى")]
+    public GameObject nephrologyCharacters; // مرجع لمجموعة شخصيات هذا السيناريو
+
+    [Tooltip("اسحب هنا كائن ScenarioManager الخاص بسيناريو أمراض الكلى")]
+    public ScenarioManager nephrologyScenario;
+
+    // يمكنك إضافة مراجع لسيناريوهات أخرى هنا في المستقبل
+    // public GameObject anotherScenarioCharacters;
+    // public ScenarioManager anotherScenarioManager;
+    // ------------------------------------
+
     void Start()
     {
         // في البداية، قم بإخفاء جميع واجهات الأجهزة
-        // واجعلها تعرض بيانات فارغة
         ClearAllMonitors();
+
+        // وقم بإخفاء كل مجموعات الشخصيات
+        if (nephrologyCharacters != null) nephrologyCharacters.SetActive(false);
+        // if (anotherScenarioCharacters != null) anotherScenarioCharacters.SetActive(false);
     }
 
     // هذه الدالة سيتم استدعاؤها عند الضغط على أزرار القائمة
@@ -44,119 +59,49 @@ public class CaseManager : MonoBehaviour
         Debug.Log("Selected Case: " + selectedCase.patientName);
 
         // قم بتحديث جميع واجهات الأجهزة بالبيانات الجديدة
-        vitalSignsUI.UpdateUI(selectedCase);
-        ventilatorUI.UpdateUI(selectedCase);
-        infusionPumpUI.UpdateUI(selectedCase);
-        historyFileUI.UpdateUI(selectedCase);
+        if (vitalSignsUI != null) vitalSignsUI.UpdateUI(selectedCase);
+        if (ventilatorUI != null) ventilatorUI.UpdateUI(selectedCase);
+        if (infusionPumpUI != null) infusionPumpUI.UpdateUI(selectedCase);
+        if (historyFileUI != null) historyFileUI.UpdateUI(selectedCase);
+
+        // --- جديد: منطق تفعيل السيناريو ---
+        // قم بإخفاء كل مجموعات الشخصيات أولاً (كإجراء احترازي قبل إظهار المجموعة الصحيحة)
+        if (nephrologyCharacters != null) nephrologyCharacters.SetActive(false);
+        // if (anotherScenarioCharacters != null) anotherScenarioCharacters.SetActive(false);
+
+        // تحقق من الحالة المختارة لتفعيل السيناريو المناسب
+        // caseIndex == 1 يعني الحالة الثانية في القائمة (لأن الترقيم يبدأ من 0)
+        if (caseIndex == 1) 
+        {
+            // أظهر الشخصيات الخاصة بهذا السيناريو
+            if (nephrologyCharacters != null)
+            {
+                nephrologyCharacters.SetActive(true);
+                Debug.Log("Nephrology characters activated.");
+            }
+
+            // ابدأ السيناريو
+            if (nephrologyScenario != null)
+            {
+                nephrologyScenario.StartScenario();
+                Debug.Log("Nephrology scenario started.");
+            }
+        }
+        // يمكنك إضافة شروط else if لسيناريوهات أخرى
+        // else if (caseIndex == 0)
+        // {
+        //     // فعل شخصيات وسيناريو الحالة الأولى
+        // }
+        // ------------------------------------
     }
 
-    // دالة لمسح جميع الشاشات
+    // دالة لمسح جميع الشاشات (باستخدام الطريقة الصحيحة)
     public void ClearAllMonitors()
     {
-        // هنا يمكنك إما مسح النصوص أو إخفاء الواجهات بالكامل
-        // مثال على الإخفاء:
-        if (vitalSignsCanvas != null) vitalSignsCanvas.SetActive(false);
-        if (ventilatorCanvas != null) ventilatorCanvas.SetActive(false);
-        if (infusionPumpCanvas != null) infusionPumpCanvas.SetActive(false);
-        if (historyFileCanvas != null) historyFileCanvas.SetActive(false);
-    }
-
-    // دوال لإظهار شاشة جهاز معين عند الضغط عليه
-    public void ShowVitalSignsMonitor()
-    {
-        if (vitalSignsCanvas != null)
-        {
-            vitalSignsCanvas.SetActive(true);
-            Debug.Log("Vital Signs Monitor Shown");
-        }
-    }
-
-    public void ShowVentilatorMonitor()
-    {
-        if (ventilatorCanvas != null)
-        {
-            ventilatorCanvas.SetActive(true);
-            Debug.Log("Ventilator Monitor Shown");
-        }
-    }
-
-    public void ShowInfusionPumpMonitor()
-    {
-        if (infusionPumpCanvas != null)
-        {
-            infusionPumpCanvas.SetActive(true);
-            Debug.Log("Infusion Pump Monitor Shown");
-        }
-    }
-
-    public void ShowHistoryFileMonitor()
-    {
-        if (historyFileCanvas != null)
-        {
-            historyFileCanvas.SetActive(true);
-            Debug.Log("History File Monitor Shown");
-        }
-    }
-
-    // دالة لإخفاء شاشة معينة
-    public void HideVitalSignsMonitor()
-    {
-        if (vitalSignsCanvas != null) vitalSignsCanvas.SetActive(false);
-    }
-
-    public void HideVentilatorMonitor()
-    {
-        if (ventilatorCanvas != null) ventilatorCanvas.SetActive(false);
-    }
-
-    public void HideInfusionPumpMonitor()
-    {
-        if (infusionPumpCanvas != null) infusionPumpCanvas.SetActive(false);
-    }
-
-    public void HideHistoryFileMonitor()
-    {
-        if (historyFileCanvas != null) historyFileCanvas.SetActive(false);
-    }
-
-    // دالة لتبديل ظهور/إخفاء شاشة معينة
-    public void ToggleVitalSignsMonitor()
-    {
-        if (vitalSignsCanvas != null)
-        {
-            bool newState = !vitalSignsCanvas.activeSelf;
-            vitalSignsCanvas.SetActive(newState);
-            Debug.Log("Vital Signs Monitor: " + (newState ? "Shown" : "Hidden"));
-        }
-    }
-
-    public void ToggleVentilatorMonitor()
-    {
-        if (ventilatorCanvas != null)
-        {
-            bool newState = !ventilatorCanvas.activeSelf;
-            ventilatorCanvas.SetActive(newState);
-            Debug.Log("Ventilator Monitor: " + (newState ? "Shown" : "Hidden"));
-        }
-    }
-
-    public void ToggleInfusionPumpMonitor()
-    {
-        if (infusionPumpCanvas != null)
-        {
-            bool newState = !infusionPumpCanvas.activeSelf;
-            infusionPumpCanvas.SetActive(newState);
-            Debug.Log("Infusion Pump Monitor: " + (newState ? "Shown" : "Hidden"));
-        }
-    }
-
-    public void ToggleHistoryFileMonitor()
-    {
-        if (historyFileCanvas != null)
-        {
-            bool newState = !historyFileCanvas.activeSelf;
-            historyFileCanvas.SetActive(newState);
-            Debug.Log("History File Monitor: " + (newState ? "Shown" : "Hidden"));
-        }
+        // بدلاً من تعطيل الكائن، نقوم بتعطيل مكون Canvas نفسه
+        if (vitalSignsCanvas != null) vitalSignsCanvas.GetComponent<Canvas>().enabled = false;
+        if (ventilatorCanvas != null) ventilatorCanvas.GetComponent<Canvas>().enabled = false;
+        if (infusionPumpCanvas != null) infusionPumpCanvas.GetComponent<Canvas>().enabled = false;
+        if (historyFileCanvas != null) historyFileCanvas.GetComponent<Canvas>().enabled = false;
     }
 }
