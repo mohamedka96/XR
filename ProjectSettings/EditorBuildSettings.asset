@@ -12,6 +12,8 @@ EditorBuildSettings:
     path: Assets/Morgue Room PBR/morgue scene/morgue.unity
     guid: 845128cf95f90184697fffb609346de8
   m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 44c79387ec40ede40851fdca1c7a6b4b,
+      type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1a4c68ca72a83449f938d669337cb305,
       type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: a9a6963505ddf7f4d886008c6dc86122,
