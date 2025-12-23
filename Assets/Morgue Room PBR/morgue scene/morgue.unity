@@ -1766,6 +1766,82 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1192391596}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &247652056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 247652057}
+  - component: {fileID: 247652059}
+  - component: {fileID: 247652058}
+  m_Layer: 0
+  m_Name: HR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &247652057
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247652056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.13, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 458905583}
+  m_Father: {fileID: 1562101887}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 38.4, y: 32.3}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &247652058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247652056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.03137255, g: 0.03137255, b: 0.015686275, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &247652059
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247652056}
+  m_CullTransparentMesh: 1
 --- !u!1 &258748826
 GameObject:
   m_ObjectHideFlags: 0
@@ -4058,12 +4134,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412085033}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.40000004}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 638128284}
+  m_Father: {fileID: 1562101887}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4587,16 +4663,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458905582}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.49999997, y: 2.3076925, z: 0.40000004}
+  m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 638128284}
+  m_Father: {fileID: 247652057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: 17.6}
+  m_AnchoredPosition: {x: 0, y: -12.307777}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &458905584
@@ -4654,15 +4730,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13
-  m_fontSizeBase: 13
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6332,9 +6408,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615815424}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.40000004}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 797703285}
@@ -7183,11 +7259,7 @@ RectTransform:
   m_LocalScale: {x: 0.009999999, y: 0.01, z: 0.009999999}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 992171879}
-  - {fileID: 458905583}
-  - {fileID: 412085034}
-  - {fileID: 1502124031}
-  - {fileID: 2078216514}
+  - {fileID: 1562101887}
   m_Father: {fileID: 1078723242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9224,9 +9296,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826741977}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.40000004}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 797703285}
@@ -9479,7 +9551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &876828615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9503,7 +9575,7 @@ MonoBehaviour:
       low urine output. Initial labs showed severe AKI and hyperkalemia. Empiric
       antibiotic was started because of sepsis history. Hyperkalemia protocol was
       done overnight
-    dialogueAudio: {fileID: 0}
+    dialogueAudio: {fileID: 8300000, guid: e81cdfbed955a8f43a9c41a6878715aa, type: 3}
     isInteractiveTask: 0
     taskObject: {fileID: 0}
   - characterName: Dr. Hassan
@@ -9511,7 +9583,7 @@ MonoBehaviour:
       AKI, hyperkalemia, dehydration. Overnight measures: insulin-dextrose protocol,
       calcium gluconate given for cardiac protection, Ringer's started. Empiric ceftriaxone
       was given because of prior sepsis. How did things evolve overnight, Dr. Yasmine?"
-    dialogueAudio: {fileID: 0}
+    dialogueAudio: {fileID: 8300000, guid: 715cfad41bf68a7418faeb27040f67fa, type: 3}
     isInteractiveTask: 0
     taskObject: {fileID: 0}
   - characterName: Dr. Yasmine
@@ -9907,9 +9979,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899909890}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.40000004}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 797703285}
@@ -11120,12 +11192,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992171878}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000010430815}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.40000004}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 638128284}
+  m_Father: {fileID: 1562101887}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12812,7 +12884,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Animation
       value: 
-      objectReference: {fileID: -203655887218126122, guid: 21ae22ba8e44fce4580f2a32c13f4b85,
+      objectReference: {fileID: -203655887218126122, guid: e23999460b4ee9a4f89a3c34a9fd6349,
         type: 3}
     - target: {fileID: 2223639932434330405, guid: 2828ac40ee276354b90ca7624930343a,
         type: 3}
@@ -15176,6 +15248,303 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1431793205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1431793207}
+  - component: {fileID: 1431793206}
+  m_Layer: 0
+  m_Name: ' ScenarioManager_Asthma'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1431793206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431793205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54b0f7cd53796d48ab641adb1d9670f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 1175528984}
+  characterNameText: {fileID: 1586389544}
+  dialogueLineText: {fileID: 926995662}
+  nextButton: {fileID: 1241985287}
+  audioSource: {fileID: 0}
+  events:
+  - characterName: Pharmacist
+    dialogueLine: Assalamu alaikum, you must be Amina's mother? I'm the clinical
+      pharmacy intern working with the medical team. I'd like to talk with you about
+      Amina's medications to make sure we have everything right and answer any questions
+      you might have. Is now a good time?
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Mother
+    dialogueLine: Yes, hello. I'm so worried. She's not getting better
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: I understand. Let's go through her medications together; it will
+      help us make sure she gets the best treatment.
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: To start, can you tell me about her puffer, the one you use when
+      she starts to cough or wheeze?
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Mother
+    dialogueLine: 'The blue one. Salbutamol.
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'How many puffs do you usually give her when she has symptoms?
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Mother
+    dialogueLine: 'Two puffs.
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'How often were you using it this time before you came to the hospital?
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Mother
+    dialogueLine: 'Almost every 4 hours, but it wasn''t helping like before.
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'Do you use a spacer device with the puffer?
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Mother
+    dialogueLine: 'A what? No, we just puff it into her mouth.
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'And does she take any daily medication for long-term control?
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Mother
+    dialogueLine: "Yes, the pink one. Montelukast.\r"
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: "What time of day does she take it?\r\r"
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Mother
+    dialogueLine: "At night.\r\n\r\r"
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'How often does she miss a dose?
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Mother
+    dialogueLine: 'Sometimes, especially when she stays with her grandmother.
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'Thank you, that is very helpful. You mentioned you don''t use
+      a spacer. Can I show you why that little device is so important for a child?
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'Without a spacer, most of the medicine hits the back of the throat
+      and doesn''t reach the lungs.
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'With a spacer, it acts like a holding chamber so Amina can breathe
+      the medicine in slowly and deeply. This makes the medicine work much better
+      and faster. '
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'Now, let''s demonstrate how to use it.
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'When we give her the inhaler in the hospital, we''ll always use
+      a spacer and show you how. Would you like to practice with us before you go
+      home?
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Mother
+    dialogueLine: 'Yes, please. I had no idea. '
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'Okay, we will make sure you try here before going home. Is everything
+      clear about the spacer now?
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Mother
+    dialogueLine: 'Yes dr, thank you. '
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'Medicines are very helpful, but I want to make sure you know what
+      to watch for, so you feel prepared and know when to call the doctor.
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Mother
+    dialogueLine: 'Okay, doctor, I''m all ears. '
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'The blue puffer works by opening the airways quickly, but it can
+      sometimes make the body a little too excited. You might notice her hands trembling
+      a little after using it. This is very common and usually harmless. '
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'Using the spacer correctly is the best way to prevent these effects,
+      because more medicine goes to the lungs instead of the rest of the body. '
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'To help prevent this from happening again, we use a simple plan.
+      Think of it like a traffic light. '
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'Green Zone (Well): When she''s well, no cough, she should take
+      her pink tablet (Montelukast) every night to keep the inflammation in her lungs
+      down. '
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'Green Zone (Well): When she''s well, no cough, she should take
+      her pink tablet (Montelukast) every night to keep the inflammation in her lungs
+      down. '
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'Red Zone (Medical Emergency): If she''s working hard to breathe,
+      the blue puffer isn''t helping, or she can''t speak in full sentences, that''s
+      the red zone. That''s when you come straight to the hospital, just like you
+      did this time. You did the right thing.
+
+'
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'This is a lot of information. What part is the most clear, and
+      what part are you still unsure about? '
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Mother
+    dialogueLine: 'The spacer makes sense. I will make sure she takes the pink tablet
+      every night. '
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'You''re doing a great job. We''ll make sure you feel confident
+      with everything before Amina goes home. '
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+  - characterName: Pharmacist
+    dialogueLine: 'You''re doing a great job. We''ll make sure you feel confident
+      with everything before Amina goes home. '
+    dialogueAudio: {fileID: 0}
+    isInteractiveTask: 0
+    taskObject: {fileID: 0}
+--- !u!4 &1431793207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431793205}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.98707, y: 2.37854, z: 4.94431}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1439804203
 GameObject:
   m_ObjectHideFlags: 0
@@ -15704,12 +16073,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502124030}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.40000004}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 638128284}
+  m_Father: {fileID: 1562101887}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16648,6 +17017,83 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536984240}
+  m_CullTransparentMesh: 1
+--- !u!1 &1562101886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1562101887}
+  - component: {fileID: 1562101889}
+  - component: {fileID: 1562101888}
+  m_Layer: 0
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1562101887
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562101886}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 992171879}
+  - {fileID: 412085034}
+  - {fileID: 1502124031}
+  - {fileID: 2078216514}
+  - {fileID: 247652057}
+  m_Father: {fileID: 638128284}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1562101888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562101886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: fd91294c9c732bc4d8a20e59d6014375, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1562101889
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562101886}
   m_CullTransparentMesh: 1
 --- !u!1001 &1579163661
 PrefabInstance:
@@ -19095,7 +19541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1821704042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19617,9 +20063,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855942432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.40000004}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 797703285}
@@ -20143,7 +20589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.31764707}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22351,12 +22797,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078216511}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.40000004}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 638128284}
+  m_Father: {fileID: 1562101887}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -23080,3 +23526,4 @@ SceneRoots:
   - {fileID: 371181004}
   - {fileID: 1132638524}
   - {fileID: 5889901}
+  - {fileID: 1431793207}
