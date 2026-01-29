@@ -1,107 +1,68 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class CaseManager : MonoBehaviour
 {
-    [Header("Patient Case Data Files")]
-    // قائمة لتضع فيها ملفات ScriptableObject الخاصة بالحالات
-    public PatientCaseData[] patientCases;
+    [Header("Case Data")]
+    public List<PatientCaseData> patientCases;
 
-    [Header("UI Controllers")]
-    // مراجع لجميع سكربتات التحكم بواجهات الأجهزة
+    [Header("Scene Controllers")]
+    public List<ScenarioManager> scenarioManagers;
+    public List<GameObject> characterGroups;
+
+    [Header("Device UI Controllers")]
     public VitalSignsUIController vitalSignsUI;
     public VentilatorUIController ventilatorUI;
     public InfusionPumpUIController infusionPumpUI;
     public HistoryFileUIController historyFileUI;
 
-    [Header("UI Canvases")]
-    // مراجع لواجهات الأجهزة نفسها لإخفائها أو إظهارها
-    public GameObject vitalSignsCanvas;
-    public GameObject ventilatorCanvas;
-    public GameObject infusionPumpCanvas;
-    public GameObject historyFileCanvas;
-
-    // --- جديد: قسم إعدادات السيناريو ---
-    [Header("Scenario Settings")]
-    [Tooltip("اسحب هنا الكائن الأب الذي يحتوي على شخصيات سيناريو أمراض الكلى")]
-    public GameObject nephrologyCharacters; // مرجع لمجموعة شخصيات هذا السيناريو
-
-    [Tooltip("اسحب هنا كائن ScenarioManager الخاص بسيناريو أمراض الكلى")]
-    public ScenarioManager nephrologyScenario;
-
-    // يمكنك إضافة مراجع لسيناريوهات أخرى هنا في المستقبل
-    // public GameObject anotherScenarioCharacters;
-    // public ScenarioManager anotherScenarioManager;
-    // ------------------------------------
+    // متغير لتخزين السيناريو النشط حاليًا
+    private ScenarioManager activeScenario = null;
 
     void Start()
     {
-        // في البداية، قم بإخفاء جميع واجهات الأجهزة
-        ClearAllMonitors();
-
-        // وقم بإخفاء كل مجموعات الشخصيات
-        if (nephrologyCharacters != null) nephrologyCharacters.SetActive(false);
-        // if (anotherScenarioCharacters != null) anotherScenarioCharacters.SetActive(false);
+        // عند البدء، تأكد من أن كل شيء مخفي
+        foreach (var group in characterGroups)
+        {
+            if (group != null) group.SetActive(false);
+        }
+        // لا نقم بإيقاف السيناريوهات هنا لتجنب المشاكل
     }
 
-    // هذه الدالة سيتم استدعاؤها عند الضغط على أزرار القائمة
     public void SelectCase(int caseIndex)
     {
-        // تحقق من أن الرقم ضمن نطاق الحالات المتاحة
-        if (caseIndex < 0 || caseIndex >= patientCases.Length)
+        if (caseIndex < 0 || caseIndex >= patientCases.Count) return;
+
+        // --- المنطق الجديد والآمن ---
+
+        // الخطوة 1: أوقف السيناريو القديم (إذا كان هناك واحد) وأخفِ كل الشخصيات.
+        if (activeScenario != null)
         {
-            Debug.LogError("Invalid case index selected: " + caseIndex);
-            return;
+            activeScenario.StopScenario();
+            activeScenario = null;
+        }
+        foreach (var group in characterGroups)
+        {
+            if (group != null) group.SetActive(false);
         }
 
-        // احصل على بيانات الحالة المختارة من القائمة
+        // الخطوة 2: حدث بيانات الأجهزة.
         PatientCaseData selectedCase = patientCases[caseIndex];
+        vitalSignsUI.UpdateUI(selectedCase);
+        ventilatorUI.UpdateUI(selectedCase);
+        infusionPumpUI.UpdateUI(selectedCase);
+        historyFileUI.UpdateUI(selectedCase);
 
-        Debug.Log("Selected Case: " + selectedCase.patientName);
-
-        // قم بتحديث جميع واجهات الأجهزة بالبيانات الجديدة
-        if (vitalSignsUI != null) vitalSignsUI.UpdateUI(selectedCase);
-        if (ventilatorUI != null) ventilatorUI.UpdateUI(selectedCase);
-        if (infusionPumpUI != null) infusionPumpUI.UpdateUI(selectedCase);
-        if (historyFileUI != null) historyFileUI.UpdateUI(selectedCase);
-
-        // --- جديد: منطق تفعيل السيناريو ---
-        // قم بإخفاء كل مجموعات الشخصيات أولاً (كإجراء احترازي قبل إظهار المجموعة الصحيحة)
-        if (nephrologyCharacters != null) nephrologyCharacters.SetActive(false);
-        // if (anotherScenarioCharacters != null) anotherScenarioCharacters.SetActive(false);
-
-        // تحقق من الحالة المختارة لتفعيل السيناريو المناسب
-        // caseIndex == 1 يعني الحالة الثانية في القائمة (لأن الترقيم يبدأ من 0)
-        if (caseIndex == 1) 
+        // الخطوة 3: أظهر الشخصيات الجديدة وابدأ السيناريو الجديد.
+        if (caseIndex < characterGroups.Count && characterGroups[caseIndex] != null)
         {
-            // أظهر الشخصيات الخاصة بهذا السيناريو
-            if (nephrologyCharacters != null)
-            {
-                nephrologyCharacters.SetActive(true);
-                Debug.Log("Nephrology characters activated.");
-            }
-
-            // ابدأ السيناريو
-            if (nephrologyScenario != null)
-            {
-                nephrologyScenario.StartScenario();
-                Debug.Log("Nephrology scenario started.");
-            }
+            characterGroups[caseIndex].SetActive(true);
         }
-        // يمكنك إضافة شروط else if لسيناريوهات أخرى
-        // else if (caseIndex == 0)
-        // {
-        //     // فعل شخصيات وسيناريو الحالة الأولى
-        // }
-        // ------------------------------------
-    }
 
-    // دالة لمسح جميع الشاشات (باستخدام الطريقة الصحيحة)
-    public void ClearAllMonitors()
-    {
-        // بدلاً من تعطيل الكائن، نقوم بتعطيل مكون Canvas نفسه
-        if (vitalSignsCanvas != null) vitalSignsCanvas.GetComponent<Canvas>().enabled = false;
-        if (ventilatorCanvas != null) ventilatorCanvas.GetComponent<Canvas>().enabled = false;
-        if (infusionPumpCanvas != null) infusionPumpCanvas.GetComponent<Canvas>().enabled = false;
-        if (historyFileCanvas != null) historyFileCanvas.GetComponent<Canvas>().enabled = false;
+        if (caseIndex < scenarioManagers.Count && scenarioManagers[caseIndex] != null)
+        {
+            activeScenario = scenarioManagers[caseIndex];
+            activeScenario.StartScenario();
+        }
     }
 }

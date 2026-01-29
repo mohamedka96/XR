@@ -1,49 +1,57 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-// هذا السطر يسمح لنا بإنشاء ملفات من هذا النوع مباشرة من قائمة "Create" في محرر Unity
-[CreateAssetMenu(fileName = "NewPatientCase", menuName = "ICU/Patient Case Data")]
+[CreateAssetMenu(fileName = "NewPatientCase", menuName = "Patient Data/Patient Case Data")]
 public class PatientCaseData : ScriptableObject
 {
-    // === معلومات المريض الأساسية ===
-    [Header("Patient Information")]
-    public string patientName;
-    public int age;
-    public float weight;
-    public float height;
-    public string chiefComplaint;
-    [TextArea(5, 10)] // يجعل حقل النص أكبر في الـ Inspector لسهولة الكتابة
-    public string history;
+    [Header("1. Case Identification")]
+    [Tooltip("الاسم الذي سيظهر على زر اختيار الحالة في القائمة الرئيسية.")]
+    public string caseName = "New Medical Case";
 
-    // === قراءات شاشة العلامات الحيوية ===
-    [Header("Vital Signs")]
-    public string bloodPressure; // كنص "152/90" لسهولة العرض
-    public int heartRate;
-    public int respiratoryRate;
-    public int spo2;
-    public float temperature;
+    [Header("2. Patient Demographics")]
+    public string patientName = "John Doe";
+    public int age = 45;
+    public string gender = "Male";
+    public float weight = 70f;
+    public float height = 175f;
 
-    // === قراءات جهاز قياس إخراج البول ===
-    [Header("Urine Output")]
-    public float urineOutputPerHour;
+    [Header("3. Admission Details")]
+    [TextArea(3, 5)]
+    public string chiefComplaint = "N/A";
+    [TextArea(3, 5)]
+    public string admissionDiagnosis = "N/A";
 
-    // === إعدادات جهاز التنفس الصناعي ===
-    [Header("Ventilator Settings")]
-    public int ventilatorRate;      // معدل التنفس المحدد على الجهاز
-    public float tidalVolume;       // حجم الهواء
-    public float peep;              // ضغط نهاية الزفير الإيجابي
-    public float fio2;              // نسبة الأكسجين (تكتب كقيمة بين 0.0 و 1.0، مثلا 0.85 لـ 85%)
+    [Header("4. Vital Signs Monitor")]
+    public string bloodPressure = "120/80";
+    public int heartRate = 80;
+    public int respiratoryRate = 18;
+    public float temperature = 37.0f;
+    public int spO2 = 98;
 
-    // === إعدادات مضخة التسريب ===
-    [Header("Infusion Pump")]
-    public string infusionDrugName; // اسم الدواء
-    public float infusionRate;      // معدل التسريب (ml/hr)
-    public float infusionVTBI;      // الحجم الكلي المراد إعطاؤه (Volume To Be Infused)
+    [Header("5. Ventilator")]
+    public string ventilationMode = "ACVC";
+    public int ventRespiratoryRate = 12;
+    public int tidalVolume = 500;
+    public float fio2 = 0.4f;
+    public int peep = 5;
+    public int peakPressure = 25;
+    public int plateauPressure = 20;
 
-    // === بيانات ملف التاريخ المرضي ===
-    [Header("History File Data")]
-    [TextArea(8, 15)] // حقل أكبر لعرض نتائج المختبر
-    public string labResults;
+    [Header("6. Infusion Pumps")]
+    [Tooltip("قائمة بالأدوية التي يتم ضخها حاليًا.")]
+    public List<string> infusionPumps = new List<string>();
 
-    [TextArea(8, 15)] // حقل أكبر لعرض قائمة الأدوية
-    public string medicationsList;
+    [Header("7. Urine Output")]
+    public float urineOutput = 50f; // mL/hr
+
+    [Header("8. Patient History File")]
+    [TextArea(10, 15)]
+    public string medicalHistory = "No significant past medical history.";
+    [TextArea(5, 10)]
+    public string medicationList = "No regular medications.";
+    [TextArea(5, 10)]
+    public string labResults = "Pending.";
+    [TextArea(5, 10)]
+    public string imagingReports = "No recent imaging.";
+
 }

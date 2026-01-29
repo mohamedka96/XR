@@ -3,16 +3,25 @@ using TMPro;
 
 public class VentilatorUIController : MonoBehaviour
 {
-    public TextMeshProUGUI rateText;
+    public TextMeshProUGUI modeText;
+    public TextMeshProUGUI respRateText;
     public TextMeshProUGUI tidalVolumeText;
-    public TextMeshProUGUI peepText;
     public TextMeshProUGUI fio2Text;
+    public TextMeshProUGUI peepText;
+    public TextMeshProUGUI peakPressureText;
+    public TextMeshProUGUI plateauPressureText;
 
-    public void UpdateUI(PatientCaseData patientData)
+    public void UpdateUI(PatientCaseData data)
     {
-        rateText.text = patientData.ventilatorRate.ToString();
-        tidalVolumeText.text = patientData.tidalVolume.ToString();
-        peepText.text = patientData.peep.ToString("F1");
-        fio2Text.text = (patientData.fio2 * 100).ToString() + "%"; // نعرضها كنسبة مئوية
+        if (data == null) return;
+
+        // استخدام أسماء المتغيرات الجديدة
+        modeText.text = data.ventilationMode;
+        respRateText.text = data.ventRespiratoryRate.ToString();
+        tidalVolumeText.text = data.tidalVolume.ToString() + " mL";
+        fio2Text.text = (data.fio2 * 100).ToString("F0") + "%";
+        peepText.text = data.peep.ToString() + " cmH2O";
+        peakPressureText.text = data.peakPressure.ToString() + " cmH2O";
+        plateauPressureText.text = data.plateauPressure.ToString() + " cmH2O";
     }
 }

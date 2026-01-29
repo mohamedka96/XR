@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b3ed8e7e0e5e44697b3e0b2902e917, type: 3}
+  m_Name: Acute Kidney Injury (AKI)
+  m_EditorClassIdentifier: 
+  caseName: ' Acute Kidney Injury (AKI)'
+  patientName: Sabah Sayed
+  age: 82
+  gender: Female
+  weight: 65
+  height: 160
+  chiefComplaint: Loin pain, Reduced Urine Output, and Weakness
+  admissionDiagnosis: ' Acute Kidney Injury (AKI), likely pre-renal from dehydration.
+    Hyperkalemia, Metabolic acidosis.'
+  bloodPressure: 100/60
+  heartRate: 84
+  respiratoryRate: 20
+  temperature: 37.2
+  spO2: 98
+  ventilationMode: N/A
+  ventRespiratoryRate: 12
+  tidalVolume: 0
+  fio2: 0.21
+  peep: 0
+  peakPressure: 25
+  plateauPressure: 20
+  infusionPumps:
+  - Ringer's Lactate 75 mL/hr
+  - IV Calcium Gluconate
+  - Insulin + Dextrose 10%
+  urineOutput: 50
+  medicalHistory: 'Diabetes Mellitus (on oral antidiabetic).
+
+    Hypertension (on
+    concor 5 mg).
+
+    History of CCU admission (HF, EF 20-30%).
+
+    History of
+    sepsis (cellulitis).
+
+    Hypothyroidism (on levothyroxine 25 mcg).
+
+'
+  medicationList: '- Levothyroxine 25 mcg once daily.
+
+    - Bisoprolol 5 mg once
+    daily.
+
+    - Metformin 500 mg once daily.
+
+'
+  labResults: "Serum Creatinine: 4.8 mg/dL (\u2191)\r\nUrea: 156 mg/dL (\u2191)\r\nK+:
+    5.4 mmol/L (\u2191) on admission.\r\npH: 7.3 (\u2193)\r\nTSH: 14.2 mIU/ml (\u2191)\r\n"
+  imagingReports: 'Kidney Ultrasound: No hydronephrosis. Kidneys are normal in size
+    and contour, no evidence of chronic parenchymal disease.
+
+'

@@ -4,88 +4,82 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
-    [Header("إعدادات القائمة")]
+    [Header("Settings")]
+    [Tooltip("واجهة قائمة الإيقاف التي سيتم إظهارها وإخفاؤها.")]
     public GameObject pauseMenuCanvas;
-    public GameObject rightHandController;
 
-    private MyGame_InputActions inputActions; // --- جديد: مرجع لكلاس الإدخال
+    [Tooltip("إجراء الإدخال الخاص بزر القائمة (يجب أن يكون مربوطًا بلوحة المفاتيح ويد التحكم).")]
+    public InputActionReference menuButtonAction;
+
     private bool isPaused = false;
 
-    void Awake()
-    {
-        // --- جديد: تهيئة نظام الإدخال ---
-        inputActions = new MyGame_InputActions();
-    }
-
-    void OnEnable()
-    {
-        // --- جديد: تفعيل الإجراءات ---
-        inputActions.PlayerControls.Pause.performed += TogglePause;
-        inputActions.PlayerControls.Enable();
-    }
-
-    void OnDisable()
-    {
-        // --- جديد: تعطيل الإجراءات ---
-        inputActions.PlayerControls.Disable();
-        inputActions.PlayerControls.Pause.performed -= TogglePause;
-    }
-
-    void Start()
+    private void OnEnable()
     {
         if (pauseMenuCanvas != null)
         {
             pauseMenuCanvas.SetActive(false);
         }
+
+        if (menuButtonAction != null)
+        {
+            menuButtonAction.action.Enable();
+            menuButtonAction.action.performed += TogglePause;
+            Debug.Log("Pause action enabled and subscribed.");
+        }
+        else
+        {
+            Debug.LogError("Menu Button Action is not assigned in the Inspector!");
+        }
     }
 
-    // لاحظ أن هذه الدالة لم تعد تحتاج إلى مرجع في Inspector
+    private void OnDisable()
+    {
+        if (menuButtonAction != null)
+        {
+            menuButtonAction.action.performed -= TogglePause;
+        }
+    }
+
     private void TogglePause(InputAction.CallbackContext context)
     {
-        Debug.Log("!!! NEW SYSTEM: TogglePause function was called! !!!");
-
+        Debug.Log("TogglePause action performed!");
         isPaused = !isPaused;
 
         if (isPaused)
         {
-            ActivateMenu();
+            PauseGame();
         }
         else
         {
-            DeactivateMenu();
+            ResumeGame();
         }
     }
 
-    // ... بقية الدوال (ActivateMenu, DeactivateMenu, etc.) تبقى كما هي ...
-    void ActivateMenu()
+    public void PauseGame()
     {
+        isPaused = true;
+        pauseMenuCanvas.SetActive(true);
         Time.timeScale = 0f;
-        if (pauseMenuCanvas != null && rightHandController != null)
-        {
-            pauseMenuCanvas.transform.position = rightHandController.transform.position + rightHandController.transform.forward * 1.5f;
-            pauseMenuCanvas.transform.rotation = Quaternion.LookRotation(rightHandController.transform.forward);
-            pauseMenuCanvas.SetActive(true);
-        }
+        Debug.Log("Game Paused");
     }
 
-    public void DeactivateMenu()
+    public void ResumeGame()
     {
-        Time.timeScale = 1f;
-        if (pauseMenuCanvas != null)
-        {
-            pauseMenuCanvas.SetActive(false);
-        }
         isPaused = false;
+        pauseMenuCanvas.SetActive(false);
+        Time.timeScale = 1f;
+        Debug.Log("Game Resumed");
     }
 
-    public void RestartGame()
+    public void RestartScene()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void QuitGame()
+    public void QuitApplication()
     {
+        Debug.Log("Quitting application...");
         Application.Quit();
     }
 }
